@@ -16,7 +16,7 @@
       <li :class="{ open: dropdownOpen }">
         <a href="#" @click.prevent="toggleDropdown">The details</a>
         <ul class="dropdown">
-          <li><router-link to="/venue">Venue</router-link></li>
+          <li><router-link to="/details/venue">Venue</router-link></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#accommodation">Accommodation</a></li>
           <li><a href="#directions">Directions</a></li>
