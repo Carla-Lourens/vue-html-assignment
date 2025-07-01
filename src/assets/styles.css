@@ -45,6 +45,26 @@ nav ul li a:hover {
     color: #a85664;
 }
 
+/* ========== ACTIVE NAV LINK UNDERLINE ========== */
+
+nav ul li .active-link{
+    position: relative;
+    color: #a85664;
+    font-weight: bold;
+}
+
+nav ul li .active-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px; /* adjust depending on spacing */
+    height: 2px;
+    width: 100%;
+    background-color: #a85664;
+    border-radius: 1px;
+}
+
+
 /* Dropdown */
 .dropdown {
     display: none;
