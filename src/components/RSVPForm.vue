@@ -9,8 +9,13 @@
       <input id="email" type="email" :placeholder="emailPlaceholder" v-model="email" />
       <div v-if="errors.email" class="error">{{ errors.email }}</div>
 
-      <label for="message">Message</label>
-      <textarea id="message" :placeholder="messagePlaceholder" v-model="message" rows="5"></textarea>
+      <label for="song">Song Recommendation</label>
+      <textarea
+        id="song"
+        :placeholder="songPlaceholder"
+        v-model="songRecommendation"
+        rows="5"
+      ></textarea>
 
       <button type="submit">{{ buttonLabel }}</button>
     </form>
@@ -37,9 +42,9 @@ export default {
       type: String,
       default: 'you@example.com'
     },
-    messagePlaceholder: {
+    songPlaceholder: {
       type: String,
-      default: 'Type a message for the couple...'
+      default: 'Recommend a song for the party playlist...'
     },
     buttonLabel: {
       type: String,
@@ -50,7 +55,7 @@ export default {
     return {
       name: '',
       email: '',
-      message: '',
+      songRecommendation: '',
       showModal: false,
       errors: {}
     };
@@ -69,7 +74,7 @@ export default {
         this.showModal = true;
         this.name = '';
         this.email = '';
-        this.message = '';
+        this.songRecommendation = '';
       }
     },
     closeModal() {
