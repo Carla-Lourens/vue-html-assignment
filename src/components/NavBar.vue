@@ -1,38 +1,47 @@
-<nav class="navigation">
+<!-- <template>
+  <nav>
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+  </nav>
+</template> -->
 
-    <router-link v-for="route in routes" :key="route.path"
-:to="route.path" class="nav-link" active-class="active">
-        {{ route.name }}
-    </router-link>
-</nav>
+<!-- src/components/NavBar.vue -->
+<template>
+  <header>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><a href="#ourstory">Our story</a></li>
+        <li><router-link to="/theweddingparty">The wedding party</router-link></li>
+        <li :class="{ open: dropdownOpen }">
+          <a href="#" @click.prevent="toggleDropdown">The details</a>
+          <ul class="dropdown">
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#accommodation">Accommodation</a></li>
+            <li><a href="#directions">Directions</a></li>
+          </ul>
+        </li>
+        <li><router-link to="/rsvp">RSVP</router-link></li>
+      </ul>
+    </nav>
+  </header>
+</template>
 
 <script>
 export default {
-    name: 'NavBar',
-    data() {
-        return {
-            routes: [
-                { path: '/', name: 'Home' },
-                { path: '/about', name: 'About' },
-                { path: '/users', name: 'Users' }
-            ]
-        }
+  name: 'NavBar',
+  data() {
+    return {
+      dropdownOpen: false
     }
+  },
+  methods: {
+    toggleDropdown() {
+      if (window.innerWidth < 768) {
+        this.dropdownOpen = !this.dropdownOpen
+      }
+    }
+  }
 }
 </script>
-
-<style scoped>
-.navigation {
-    padding: 1rem;
-    background: #f8f9fa;
-}
-.nav-link {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #495057;
-}
-.active {
-    color: #007bff;
-    font-weight: bold;
-}
-</style>

@@ -2,14 +2,17 @@
   <div id="app">
     <NavBar />
     <router-view></router-view>
+    <SiteFooter/>
   </div>
  </template> 
 
 <script>
 import NavBar from './components/NavBar.vue';
+import SiteFooter from './components/SiteFooter.vue'
 export default {
 components: {
-NavBar
+NavBar,
+SiteFooter,
 }
 }
 </script>
