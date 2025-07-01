@@ -1,14 +1,14 @@
 // src/router/index.js
-/* eslint-disable */
 
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
+import RSVPView from '@/views/RSVPView.vue'
+
 
 const routes = [
-{path: '/',name: 'HomeView',component: HomeView,meta: { title: 'Home Page' }},
-{path: '/about',name: 'AboutView',component: AboutView,meta: { title: 'About Us' }}
-]
+  { path: '/', name: 'HomeView', component: HomeView, meta: { title: 'Home Page' } },
+  { path: '/rsvp', name: 'RSVPView', component: RSVPView, meta: { title: 'RSVP Page' } }
+];
 
 export default createRouter({
     history: createWebHistory(),
